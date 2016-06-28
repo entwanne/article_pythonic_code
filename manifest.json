@@ -1,0 +1,49 @@
+{
+    "object": "container",
+    "slug": "les-secrets-dun-code-pythonique",
+    "title": "Les secrets d'un code pythonique",
+    "introduction": "introduction.md",
+    "conclusion": "conclusion.md",
+    "children": [
+        {
+            "object": "extract",
+            "slug": "zen-of-python",
+            "title": "Zen of Python",
+            "text": "zen-of-python.md"
+        },
+        {
+            "object": "extract",
+            "slug": "les-autres-principes",
+            "title": "Les autres principes",
+            "text": "les-autres-principes.md"
+        },
+        {
+            "object": "extract",
+            "slug": "les-mecanismes-du-langage",
+            "title": "Les mécanismes du langage",
+            "text": "les-mecanismes-du-langage.md"
+        },
+        {
+            "object": "extract",
+            "slug": "la-bibliotheque-standard",
+            "title": "La bibliothèque standard",
+            "text": "la-bibliotheque-standard.md"
+        },
+        {
+            "object": "extract",
+            "slug": "les-bons-reflexes",
+            "title": "Les bons réflexes",
+            "text": "les-bons-reflexes.md"
+        },
+        {
+            "object": "extract",
+            "slug": "exemples",
+            "title": "Exemples",
+            "text": "exemples.md"
+        }
+    ],
+    "version": 2,
+    "description": "",
+    "type": "ARTICLE",
+    "licence": "CC BY-SA"
+}
