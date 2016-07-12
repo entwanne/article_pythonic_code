@@ -40,12 +40,6 @@
             "slug": "les-bons-reflexes",
             "title": "Les bons réflexes",
             "text": "les-bons-reflexes.md"
-        },
-        {
-            "object": "extract",
-            "slug": "exemples",
-            "title": "Exemples",
-            "text": "exemples.md"
         }
     ],
     "version": 2,

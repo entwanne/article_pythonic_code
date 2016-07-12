@@ -4,7 +4,7 @@ Ces règles sont énoncées par la [PEP8](https://www.python.org/dev/peps/pep-00
 Le premier principe à respecter est la cohérence. Il se peut que vous ayez affaire à une bibliothèque ne respectant pas la PEP8.
 Dans ce cas, adaptez-vous au style de cette bibliothèque. La concordance avec les règles de style générales passe en second plan.
 
-Aussi, la lisibilité prévaut sur tout le reste. Si, dans votre cas précis, une règle nuit à la compréhension d'une ligne, ne l'appliquez pas.
+Aussi, la lisibilité prévaut sur tout le reste. Si, dans votre cas précis, une règle nuit à la compréhension d'une ligne, ne l'appliquez pas. *Practicability beats purity*.
 
 Je ne vais pas détailler ici l'ensemble des directives, je vous laisse consulter la PEP pour cela.
 Retenez qu'elle concerne l'indentation et l'aération, les imports, les commentaires, les conventions de nommage, et d'autres recommandations plus générales.

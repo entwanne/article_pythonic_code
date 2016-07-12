@@ -1,22 +1,75 @@
 Un code pythonique se doit d'exploiter au mieux les modules de la bibliothèque standard.
 Il convient alors de les connaître dans les grandes lignes, pour être en mesure de les utiliser quand le besoin se fait sentir.
 
-Cela commence par la bonne utilisation des *builtins*[^builtins]. Savoir comment elles s'utilisent, connaître leurs paramètres (notamment le paramètre `key` des fonctions `min`, `max` et `sorted`).
+# *Built-in*
 
-Les types *builtins* sont aussi à regarder, afin d'en connaître les principales méthodes. Les exemples les plus flagrants concernent les chaînes de caractères. La concaténation y est une fonctionnalité coûteuse, et donc à déconseiller.
-On lui préférera les méthodes `str.format` (concaténer et formater différentes chaînes) et `str.join` (unir un ensemble de chaînes).
+Cela commence par la bonne utilisation des [fonctions *built-in*](https://docs.python.org/3/library/functions.html).
+Savoir comment elles s'utilisent, connaître leurs paramètres (notamment le paramètre `key` des fonctions `min`, `max` et `sorted`).
 
-Le module `collections`[^collections] est aussi très important. il comporte des structures de données essentielles au langage (`defaultdict`, `OrderedDict`, `namedtuple`, `Counter`).
+Les [types *built-in*](https://docs.python.org/3/library/stdtypes.html) sont aussi à regarder, afin d'en connaître les principales méthodes.
+Je pense par exemple à la méthode `format` des chaînes de caractères qui permet facilement de composer plusieurs valeurs en une chaîne.
 
-Viennent ensuite les autres modules, tels que `itertools`[^itertools], `functools`[^functools] ou `operator`[^operator]. Ces modules regroupent divers utilitaires sympathiques, qui simplifient grandement le code.
+```python
+print('{} + {} = {}'.format(2, 3, 2 + 3))
+```
+
+Je voudrais aussi aborder les méthodes `get` et `setdefault` des dictionnaires, qui permettent de gérer facilement les éléments manquants.
+
+```python
+>>> database = {'foo': 123}
+>>> database.get('bar')
+>>> database.get('bar', 0)
+0
+>>> database.setdefault('letters', []).append('a')
+>>> database.setdefault('letters', []).append('b')
+>>> database
+{'foo': 123, 'letters': ['a', 'b']}
+```
+
+Ou encore le constructeur des conteneurs standards (`list`, `tuple`, `dict`, `set`), qui accepte un autre itérable en paramètre.
+
+```python
+>>> names = ['Guido', 'Tim', 'Barry', 'Nick']
+>>> ages = [38, 15, 52, 33]
+>>> list(enumerate(names))
+[(0, 'Guido'), (1, 'Tim'), (2, 'Barry'), (3, 'Nick')]
+>>> dict(zip(names, ages))
+{'Tim': 15, 'Barry': 52, 'Guido': 38, 'Nick': 33}
+```
+
+# Autres modules
+
+Le module [`collections`](https://docs.python.org/3/library/collections.html) comporte d'autres structures de données essentielles au langage : `OrderedDict`, `namedtuple`, `Counter`, ou encore `defaultdict` qui sera préférable à une utilisation systématique de `setdefault`.
+Des développeurs débutants auront le réflexe de recréer ces classes, alors qu'elles sont à portée de main.
+
+```python
+>>> from collections import Counter
+>>> names = ['Guido', 'Tim', 'Barry', 'Tim', 'Nick', 'Nick', 'Tim']
+>>> count = Counter(names)
+>>> count
+Counter({'Tim': 3, 'Nick': 2, 'Guido': 1, 'Barry': 1})
+>>> count['Nick']
+2
+>>> count['Robert']
+0
+```
+
+Viennent ensuite les autres modules, tels que [`itertools`](https://docs.python.org/3/library/itertools.html), [`functools`](https://docs.python.org/3/library/functools.html) ou [`operator`](https://docs.python.org/3/library/operator.html).
+Ces modules regroupent divers utilitaires sympathiques, qui simplifient grandement le code.
 En faire bon usage permet de se conformer aux standards du langage.
+
+```python
+fox x, y in product(range(10), range(5)):
+    print('{} + {} = {}'.format(x, y, x + y))
+```
+
+```python
+>>> import functools, operator
+>>> add_3 = functools.partial(operator.add, 3)
+>>> add_3(5)
+8
+```
 
 Enfin, suivant le domaine d'application du projet, entrent en compte les modules dédiés : `re`, `math`, `random`, `urllib`, `datetime`, `struct`, etc., et leurs propres bonnes pratiques, souvent détaillées dans la documentation.
 
-La référence complète de la bibliothèque standard peut être trouvée ici : [https://docs.python.org/3/library/index.html]().
-
-[^builtins]: [https://docs.python.org/3/library/functions.html]()
-[^collections]: [https://docs.python.org/3/library/collections.html]()
-[^itertools]: [https://docs.python.org/3/library/itertools.html]()
-[^functools]: [https://docs.python.org/3/library/functools.html]()
-[^operator]: [https://docs.python.org/3/library/operator.html]()
+La référence complète de la bibliothèque standard peut être [trouvée ici](https://docs.python.org/3/library/index.html).
