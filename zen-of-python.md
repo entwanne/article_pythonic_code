@@ -23,4 +23,3 @@ Celle-ci énonce :
 * Les espaces de noms sont une sacrée bonne idée, utilisons-les plus souvent (*Namespaces are one honking great idea -- let's do more of those*) !
 
 Il ressort de ces règles que la lisibilité et la simplicité du code sont des valeurs majeures en Python.
-La lisibilité est d'ailleurs complétée par la [PEP8](https://www.python.org/dev/peps/pep-0008/), qui énonce les règles de style générales du langage.

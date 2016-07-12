@@ -13,6 +13,12 @@
         },
         {
             "object": "extract",
+            "slug": "les-regles-de-style",
+            "title": "Les règles de style",
+            "text": "les-regles-de-style.md"
+        },
+        {
+            "object": "extract",
             "slug": "les-autres-principes",
             "title": "Les autres principes",
             "text": "les-autres-principes.md"
