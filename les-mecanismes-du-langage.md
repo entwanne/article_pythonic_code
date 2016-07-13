@@ -98,6 +98,20 @@ Si notre liste `squares` a simplement pour but de calculer la somme des élémen
 sum_squares = sum(x**2 for x in range(10))
 ```
 
+# Exceptions
+
+La gestion d'erreurs est réalisée en Python à l'aide d'un mécanisme d'exceptions, mais les exceptions ne se limitent pas à cela.
+Le protocole d'itération décrit plus haut s'appuie par exemple sur une exception `StopIteration` levée en fin de boucle.
+
+Vos traitements défectueux doivent toujours remonter une exception adaptée au problème, et décrivant au mieux sa raison.
+Les types d'exceptions sont généralement hiérarchisés de façon à représenter le problème à différents niveaux d'abstractions.
+
+Si vous êtes par exemple amené à développer une bibliothèque, il est courant que toutes ses exceptions héritent d'une même base permettant facilement d'attraper toutes les erreurs de la bibliothèque.
+Dans le cas d'un champ manquant lors de l'analyse du fichier de configuration d'un composant de votre bibliothèque `mylib`, vous pourriez avoir une exception de type `mylib.FieldMissingError` héritant de `mylib.ParseError` et elle même de `mylib.Error`.
+
+De l'autre côté, il est conseillé d'attraper judicieusement les exceptions.
+Si vous souhaitez traiter un tel problème de champ manquant, vous attraperez l'exception `mylib.FieldMissingError` plutôt que `mylib.Error` qui serait ici trop générale.
+
 # Décorateurs
 
 Les décorateurs, utilisés à bon escient, sont aussi une particularité du langage.

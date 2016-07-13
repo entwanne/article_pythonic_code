@@ -37,6 +37,11 @@ Ou encore le constructeur des conteneurs standards (`list`, `tuple`, `dict`, `se
 {'Tim': 15, 'Barry': 52, 'Guido': 38, 'Nick': 33}
 ```
 
+Nous retrouvons enfin les [exceptions *built-in*](https://docs.python.org/3/library/exceptions.html) et leur hiérarchie.
+
+On distinguera par exemple les `TypeError` pour relever une erreur due au type d'une variable, et les `ValueError` quand la valeur est du bon type mais ne correspond pas à ce qui est attendu.
+On notera aussi `IndexError` et `KeyError`, respectivement pour un index ou une clef non trouvée dans un conteneur.
+
 # Autres modules
 
 Le module [`collections`](https://docs.python.org/3/library/collections.html) comporte d'autres structures de données essentielles au langage : `OrderedDict`, `namedtuple`, `Counter`, ou encore `defaultdict` qui sera préférable à une utilisation systématique de `setdefault`.
