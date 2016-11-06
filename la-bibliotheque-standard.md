@@ -64,6 +64,8 @@ Ces modules regroupent divers utilitaires sympathiques, qui simplifient grandeme
 En faire bon usage permet de se conformer aux standards du langage.
 
 ```python
+from itertools import product
+
 fox x, y in product(range(10), range(5)):
     print('{} + {} = {}'.format(x, y, x + y))
 ```

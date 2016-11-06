@@ -139,7 +139,7 @@ def division(a, b):
 
 # In the face of ambiguity, refuse the temptation to guess.
 
-_En cas d'ambiguïté, refuser la tentation de deviner._
+_En cas d'ambiguïté, résister à la tentation de deviner._
 
 Deviner implique un choix, choix qui ne sera pas forcément clair pour tous les développeurs.
 S'il n'est pas clair, c'est qu'il n'est pas explicite.
