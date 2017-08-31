@@ -18,7 +18,7 @@ user = {'username': 'guido', 'realname': 'Guido van Rossum', 'password': '12345'
 ```
 
 Le principe s'exprime aussi par le fait de ne pas créer de hiérarchie de classes trop complexe, et même d'ailleurs de ne pas user d'héritage quand ce n'est pas nécessaire (penser au *duck-typing*).
-De même, Python dispose d'outils puissants (décorateurs, générateurs, métaclasses), qui doivent être utilisées judicieusement, quand ils ne nuisent pas à la simplicité.
+De même, Python dispose d'outils puissants (décorateurs, générateurs, métaclasses), qui doivent être utilisés judicieusement, quand ils ne nuisent pas à la simplicité.
 
 # Don't repeat yourself (*DRY*)
 
@@ -96,9 +96,9 @@ try:
     with open('filename', 'r') as f:
         handle_file(f)
 except FileNotFoundError as e:
-    errlog('Fichier {} non trouvé', repr(e.filename))
+    errlog('Fichier {!r} non trouvé', e.filename)
 except PermissionError as e:
-    errlog('Fichier {} non lisible', repr(e.filename))
+    errlog('Fichier {!r} non lisible', e.filename)
 ```
 
 Cette manière de procéder a aussi l'avantage d'être plus sûre en Python. En effet, dans le cas où l'on testerait d'abord l'existence du fichier, rien ne nous garantit qu'il serait toujours présent au moment de l'ouverture proprement dite (il peut être supprimé par un autre programme entretemps).

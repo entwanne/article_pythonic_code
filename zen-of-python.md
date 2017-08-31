@@ -45,6 +45,12 @@ Certaines structures du langage vont s'avérer plus complexes que d'autres.
 L'application d'un décorateur est une instruction complexe, par les mécanismes qu'elle met en œuvre :
 patron de conception décorateur, fonctions passées implicitement en paramètre.
 
+```python
+@staticmethod
+def method():
+    ...
+```
+
 # Complex is better than complicated.
 
 _Le complexe est préférable au compliqué._
@@ -88,6 +94,12 @@ Vous, et les autres développeurs du projet, passerez probablement plus de temps
 Le code se doit donc d'être lisible facilement, pour ne pas faire perdre de temps à tous.
 
 La lisibilité passera par de nombreux points évoqués par les autres directives, mais aussi par un choix judicieux des noms de fonctions et variables par exemple.
+
+```python
+def reset_password(*users, password=''):
+    for user in users:
+        user.password = password
+```
 
 # Special cases aren't special enough to break the rules.
 
@@ -134,7 +146,7 @@ def division(a, b):
     try:
         return a / b
     except ZeroDivisionError:
-        return 0
+        return float('nan')
 ```
 
 # In the face of ambiguity, refuse the temptation to guess.
@@ -152,7 +164,7 @@ Aucune conversion implicite ne sera effectuée, il faudra convertir manuellement
 >>> a + 1
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-TypeError: Can't convert 'int' object to str implicitly
+TypeError: Can´t convert 'int' object to str implicitly
 >>> int(a) + 1
 6
 >>> a + str(1)
@@ -230,10 +242,11 @@ Ils évitent aussi les conflits de noms, un même nom pouvant être utilisé pou
 On aimera alors en user pour bien classifier nos objets.
 
 ```python
-import math, cmath
-
-print(math.exp(0))
-print(cmath.exp(0))
+>>> import math, cmath
+>>> math.exp(0)
+1.0
+>>> cmath.exp(0)
+(1+0j)
 ```
 
 # Fin ?

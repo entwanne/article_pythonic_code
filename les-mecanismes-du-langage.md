@@ -64,8 +64,11 @@ Et ceci est valable pour toutes les variables qui devraient prendre des valeurs 
 Ainsi, on s'orientera vers `zip` pour itérer sur plusieurs éléments à la fois, vers `enumerate` pour itérer en gardant trace de l'index dans la liste, ou encore vers des constructions plus complexes du module `itertools` que nous verrons plus loin.
 
 ```python
-names = ['Guido', 'Tim', 'Barry', 'Nick']
-ages = [38, 15, 52, 33]
+names = ['Alex', 'Alice', 'Bob']
+ages = [45, 27, 74]
+
+for name, age in zip(names, ages):
+    print(name, age)
 
 for i, (name, age) in enumerate(zip(names, ages)):
     print(i, name, age)
@@ -86,7 +89,8 @@ squares = [i**2 for i in range(10)]
 On retrouve la même construction pour les dictionnaires en intension.
 
 ```python
-squares = {i: i**2 for i in range(10)}
+squares_set = {i**2 for i in range(10)}
+squares_dict = {i: i**2 for i in range(10)}
 ```
 
 # Générateurs
@@ -126,8 +130,8 @@ class Circle:
     @classmethod
     def from_diameter(cls, ax, ay, bx, by):
         cx, cy = (ax + bx) / 2, (ay + by) / 2
-        radius = ((ax - bx)**2 + (ay - by)**2)**0.5 / 2
-        return cls(cx, cy, radius)
+        diam = ((ax - bx)**2 + (ay - by)**2)**0.5
+        return cls(cx, cy, diam / 2)
 
     @property
     def area(self):
